@@ -188,9 +188,9 @@ export default function AddInventory() {
               onChange={handleToggle}
               checked={isReturnable}
             />
-            <div className="mt-4 text-lg">
+            <div className="mt-4 text-lg ">
               Status:
-              <span className="font-semibold">
+              <span className="font-semibold pl-1">
                 {isReturnable ? "Returnable" : "Non-returnable"}
               </span>
             </div>

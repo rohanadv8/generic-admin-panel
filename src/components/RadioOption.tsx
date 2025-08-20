@@ -17,7 +17,7 @@ const RadioOption: React.FC<RadioOptionProps> = ({
   onChange,
 }) => {
   return (
-    <label className="cursor-pointer inline-block text-sm pr-2">
+    <label className="cursor-pointer inline-block text-sm pr-3">
       <input
         className="mr-1 mt-[-3px]"
         type="radio"
