@@ -16,7 +16,6 @@ import Input from "@/components/Input";
 // PLUGINS //
 // import toastr from "toastr";
 // IMAGES //
-import LogoImage from "../../public/images/logo.png";
 
 // ICONS //
 
@@ -24,13 +23,12 @@ import LogoImage from "../../public/images/logo.png";
 
 // DATA //
 // import { login } from "@/server/controller/user.controller";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+
 import Button from "@/components/Button";
 import Link from "next/link";
 
 export default function LoginSection() {
-  const [loading, setLoading] = useState(false);
+  //   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState<{
     username: string;
     password: string;
@@ -66,11 +64,11 @@ export default function LoginSection() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setErrors({ username: "", password: "", all: "" }); // Reset errors before starting
-    setLoading(true);
+    // setLoading(true);
 
     try {
       if (!validateFormData()) {
-        setLoading(false);
+        // setLoading(false);
         return;
       }
 
@@ -101,7 +99,7 @@ export default function LoginSection() {
         all: errorMessage,
       });
     } finally {
-      setLoading(false);
+      //   setLoading(false);
     }
   };
 
