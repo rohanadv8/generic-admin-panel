@@ -27,6 +27,7 @@ import LogoImage from "../../public/images/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import Button from "@/components/Button";
+import Link from "next/link";
 
 export default function LoginSection() {
   const [loading, setLoading] = useState(false);
@@ -149,7 +150,9 @@ export default function LoginSection() {
           />
         </div>
         <div className="mt-8 w-full">
-          <Button color="blackLogin" onClick={() => {}} text="Login" />
+          <Link href="/inventory-list">
+            <Button color="blackLogin" onClick={() => {}} text="Login" />{" "}
+          </Link>
           {/* <button
             type="submit"
             disabled={loading}
