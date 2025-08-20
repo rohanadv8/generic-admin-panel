@@ -107,9 +107,9 @@ export default function LoginSection() {
     <div className="h-screen w-screen flex justify-center items-center bg-headerBackground">
       <form
         onSubmit={handleSubmit}
-        className="px-16 pt-8 pb-16 w-1/3 bg-primary-600 bg-shadow-2xl border-primary-200 rounded-3xl"
+        className="px-16 py-12 w-1/3 bg-primary-600 bg-shadow-2xl border-primary-200 rounded-3xl"
       >
-        <div className="flex justify-center">
+        <div className="flex justify-center pr-3">
           <Image
             src="/icons/franck-muller.png"
             alt="Franck Muller Logo"
