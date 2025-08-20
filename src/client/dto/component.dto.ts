@@ -1,13 +1,13 @@
-// import { IconProp } from "@fortawesome/fontawesome-svg-core";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 // import { SelectRenderer } from "react-dropdown-select";
 export interface NavbarLinkProps {
   buttonIconClass: "iconButton";
   path: string;
   text: string;
-  //   navicon: IconProp;
+  navicon: IconProp;
 }
 export interface ButtonPropsDto {
-  color: "red" | "black" | "blue";
+  color: "red" | "black" | "blackLogin";
 
   text: string;
   icon?: React.ReactNode;

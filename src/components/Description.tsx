@@ -2,13 +2,18 @@
 
 import { useState } from "react";
 
-export default function DescriptionEditor() {
+export default function DescriptionEditor({
+  isMandatory,
+}: {
+  isMandatory: boolean;
+}) {
   const [content, setContent] = useState("");
 
   return (
-    <div className="w-full my-2 ">
-      <label className="block pl-1 mb-1 text-sm font-medium text-secondary-900 ">
+    <div className="w-full mt-4 ">
+      <label className="block pl-1 mb-1 text-sm font-medium text-secondary-900">
         Description
+        {isMandatory && <span className="pl-1 text-red-500">*</span>}
       </label>
 
       {/* Toolbar */}
