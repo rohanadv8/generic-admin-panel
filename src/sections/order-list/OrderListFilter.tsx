@@ -53,7 +53,7 @@ CustomerListFilterrDTO) {
         {" "}
         Order List
       </h2>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-1  md:gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-1  md:gap-4">
         <Input
           label="Search by Order ID"
           inputPlace="basicClasses"

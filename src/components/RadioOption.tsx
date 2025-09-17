@@ -19,14 +19,14 @@ const RadioOption: React.FC<RadioOptionProps> = ({
   return (
     <label className="cursor-pointer inline-block text-sm pr-3">
       <input
-        className="mr-1 mt-[-3px]"
+        className="mr-1 mt-1"
         type="radio"
         name={name}
         value={value}
         checked={checked}
         onChange={onChange}
       />
-      {label}
+      <span className="">{label}</span>
     </label>
   );
 };

@@ -89,8 +89,8 @@ function MediaUploader({ isMandatory }: { isMandatory: boolean }) {
                 </button>
               </div>
               {/* Upload Info */}
-              <p className="text-xs text-secondary-900">
-                Accepts images, videos, or 3D models
+              <p className="text-xs  text-left text-secondary-900">
+                Accepts images only
               </p>
               {/* Hidden File Input */}
               <input

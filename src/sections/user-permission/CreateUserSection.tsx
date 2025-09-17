@@ -1,16 +1,21 @@
 "use client";
 import Button from "@/components/Button";
 import Input from "@/components/Input";
+import RadioOption from "@/components/RadioOption";
 
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
+interface Type {
+  name: string;
+}
 
 const CreateUserSection = ({
   toggleModal,
 }: {
   toggleModal(key: boolean): void;
 }) => {
+  const types: Type[] = [{ name: "Read" }, { name: "Write" }, { name: "None" }];
   const [errors, setErrors] = useState({
     username: "",
     password: "",
@@ -24,7 +29,7 @@ const CreateUserSection = ({
     confirmPassword: "",
     isActive: true,
   });
-
+  const [selectedType, setSelectedType] = useState<string>("");
   const setFormValues = (value: string, key: string) => {
     setFormData({ ...formData, ...{ [key]: value } });
   };
@@ -41,7 +46,9 @@ const CreateUserSection = ({
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex justify-between  w-full text-sm">
-          <p className=" text-base  text-white ml-5">{"Create User"}</p>
+          <p className=" text-base font-semibold text-secondary-900 ml-6">
+            {"Create User"}
+          </p>
 
           <FontAwesomeIcon
             icon={faXmark}
@@ -90,6 +97,19 @@ const CreateUserSection = ({
               isMandatory={true}
             />
           </div>
+        </div>
+        <div className="flex justify-between items-center mx-6 pb-6">
+          <h3 className="text-medium ">Provide permissions :</h3>
+          {types.map((type) => (
+            <RadioOption
+              key={type.name}
+              name="bookType"
+              value={type.name}
+              label={type.name}
+              checked={selectedType === type.name}
+              onChange={(e) => setSelectedType(e.target.value)}
+            />
+          ))}
         </div>
         <div className="flex justify-center items-center">
           <Button color="black" onClick={() => {}} text="Save Member" />

@@ -43,7 +43,7 @@ export default {
         },
 
         surface: {
-          800: "#19191F",
+          800: "#353538ff",
         },
         text: {
           100: "#8C929C",

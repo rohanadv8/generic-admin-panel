@@ -1,3 +1,9 @@
+"use client";
+import { OrderDetails } from "@/client/dto/order.dto";
+import { OrderDetailsModal } from "./OrderDetailsModal";
+import { useState } from "react";
+import Button from "@/components/Button";
+
 export default function FetchEventsTable() {
   const orderList = [
     {
@@ -45,6 +51,122 @@ export default function FetchEventsTable() {
       orderStatus: "Pending",
     },
   ];
+  const dummyOrder: OrderDetails = {
+    id: "ABC123456",
+    status: "Shipped",
+    products: [
+      {
+        productId: "WAT001",
+        name: "Rolex Submariner 40mm",
+        variant: "Steel/Black Dial",
+        imageUrl: "/images/role_sub.jpg",
+        quantity: 1,
+        unitPrice: 120000,
+        totalPrice: 120000,
+        id: "",
+        price: 0,
+        image: "",
+      },
+      {
+        productId: "WAT002",
+        name: "Omega Speedmaster Moonwatch",
+        variant: "Steel / Hesalite",
+        imageUrl: "/images/omega_speed.jpg",
+        quantity: 1,
+        unitPrice: 85000,
+        totalPrice: 85000,
+        id: "",
+        price: 0,
+        image: "",
+      },
+    ],
+    shippingAddress: {
+      name: "John Doe",
+      company: "Acme Corp.",
+      line1: "123 Main St.",
+      line2: "Suite 4B",
+      city: "Mumbai",
+      state: "Maharashtra",
+      zip: "400001",
+      country: "India",
+      phone: "+91 9876543210",
+      street: "",
+    },
+    billingAddress: {
+      name: "Jane Doe",
+      company: "Beta LLC",
+      line1: "456 Maple Ave.",
+      line2: "",
+      city: "Pune",
+      state: "Maharashtra",
+      zip: "411001",
+      country: "India",
+      phone: "+91 9123456789",
+      street: "",
+    },
+    shippingMethod: "Express",
+    carrier: "DHL",
+    trackingNumbers: ["DHL123456789", "DHL987654321"],
+    shippedDate: "2025-09-10",
+
+    paymentMethod: "Credit Card •••• 4242",
+    transactions: [
+      {
+        transactionId: "TXN001",
+        type: "charge",
+        amount: 200000,
+        date: "2025-09-09 12:00:00",
+        status: "success",
+      },
+    ],
+    amountPaid: 200000,
+    amountDue: 0,
+
+    shipments: [
+      {
+        shipmentId: "SHP1",
+        carrier: "DHL",
+        shippingMethod: "Air",
+        trackingNumber: "DHL123456789",
+        shippedDate: "2025-09-10",
+        estimatedDelivery: "2025-09-15",
+        deliveredDate: "2025-09-14",
+        events: [
+          { date: "2025-09-10 08:00", status: "Picked up" },
+          { date: "2025-09-11 12:00", status: "In transit" },
+          { date: "2025-09-14 09:30", status: "Delivered" },
+        ],
+      },
+    ],
+
+    subtotal: 205000,
+    shippingCost: 1500,
+    discounts: 5000,
+    tax: 18500,
+    grandTotal: 221000,
+
+    auditLogs: [
+      {
+        date: "2025-09-09 11:00",
+        changedBy: "Admin A",
+        change: "Order created",
+      },
+      {
+        date: "2025-09-10 06:00",
+        changedBy: "Admin A",
+        change: "Payment succeeded",
+      },
+      {
+        date: "2025-09-10 07:30",
+        changedBy: "Admin B",
+        change: "Marked as shipped",
+      },
+    ],
+
+    adminNotes: "Customer requested gift wrap.",
+    customerNotes: "Please leave at front desk if nobody home.",
+  };
+  const [modalOpen, setModalOpen] = useState(false);
   return (
     <div className="  bg-primary-200 p-4 rounded-lg shadow-2xl">
       {orderList?.length === 0 ? (
@@ -62,6 +184,7 @@ export default function FetchEventsTable() {
               <th className="p-2 ">Total Amount</th>
               <th className="p-2 ">Payment Status</th>
               <th className="p-2 ">Order Status</th>
+              <th className="p-2 ">Order Details</th>
             </tr>
           </thead>
 
@@ -82,11 +205,33 @@ export default function FetchEventsTable() {
                 <td className="p-2  text-center">{event?.totalAmt}</td>
                 <td className="p-2  text-center">{event?.paymentStatus}</td>
                 <td className="p-2  text-center">{event?.orderStatus}</td>
+                <td className="p-2  text-center">
+                  {" "}
+                  {/* <button
+                    // className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+                    onClick={() => setModalOpen(true)}
+                  >
+                    View Order {dummyOrder.id}
+                  </button> */}
+                  <Button
+                    color="black"
+                    onClick={() => setModalOpen(true)}
+                    text={`View Order `}
+                  />
+                </td>
               </tr>
             ))}
           </tbody>
         </table>
       )}
+
+      <div>
+        <OrderDetailsModal
+          order={dummyOrder}
+          isOpen={modalOpen}
+          onClose={() => setModalOpen(false)}
+        />
+      </div>
     </div>
   );
 }

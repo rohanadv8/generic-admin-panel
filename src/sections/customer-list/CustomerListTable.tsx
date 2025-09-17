@@ -72,9 +72,9 @@ export default function CustomerListTable() {
                 />
               </th>
               <th className="p-2  ">Customer Name</th>
-              <th className="p-2  ">Email Subscription</th>
-              <th className="p-2  ">Location</th>
-              <th className="p-2 ">Orders</th>
+              <th className="p-2  ">Email</th>
+              <th className="p-2  ">Orders</th>
+              <th className="p-2 ">Action</th>
             </tr>
           </thead>
 

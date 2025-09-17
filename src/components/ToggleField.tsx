@@ -12,7 +12,7 @@ interface ToggleFieldDto {
 const ToggleField = ({ label, checked, onChange }: ToggleFieldDto) => (
   <div className="flex items-center space-x-3">
     {label && (
-      <label className="cursor-pointer text-sm font-medium text-secondary-900">
+      <label className="cursor-pointer pl-1 text-sm font-medium text-secondary-900">
         {label}
       </label>
     )}
