@@ -26,9 +26,9 @@ export const OrderDetailsModal: React.FC<Props> = ({
 
   return (
     <div className="fixed inset-0 z-50  bg-black bg-opacity-50 flex justify-center items-start p-4">
-      <div className="bg-white rounded-lg shadow-lg max-w-4xl w-full mt-16 mb-8 overflow-auto max-h-[90vh]">
+      <div className="bg-white rounded-lg shadow-lg max-w-4xl w-full mt-16 mb-8 overflow-auto max-h-[85vh]">
         {/* Header */}
-        <div className="flex justify-between items-center border-b border-b-secondary-900 bg-primary-600 px-6 py-4">
+        <div className="flex justify-between items-center border-b border-b-secondary-900 bg-primary-600 px-6 py-4 ">
           <div>
             <h2 className="text-2xl font-semibold text-secondary-900">
               Order Details #{order.id}
