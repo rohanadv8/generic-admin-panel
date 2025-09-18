@@ -41,7 +41,7 @@ export default function ThemeToggle({ isRightMenu }: ThemeToggleProps) {
         >
           {/* Dark Mode Icon */}
           <Image
-            src="/icons/moon.svg"
+            src="/icons/moon1.svg"
             alt="Dark Mode"
             width={20}
             height={20}
@@ -57,7 +57,7 @@ export default function ThemeToggle({ isRightMenu }: ThemeToggleProps) {
             width={20}
             height={20}
             className={`${
-              theme !== "dark" ? "opacity-100" : "opacity-30"
+              theme !== "dark" ? "opacity-100" : "opacity-50"
             } transition-opacity absolute left-3 top-1/2 transform -translate-y-1/2`}
           />
         </button>
