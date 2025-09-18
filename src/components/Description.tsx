@@ -11,7 +11,7 @@ export default function DescriptionEditor({
 
   return (
     <div className="w-full mt-4 ">
-      <label className="block pl-1 mb-1 text-sm text-secondary-900">
+      <label className="block  mb-1 text-sm text-secondary-900">
         Description
         {isMandatory && <span className="pl-1 text-red-500">*</span>}
       </label>

@@ -1,5 +1,6 @@
 // components/OrderDetailsModal.tsx
 import React from "react";
+import Image from "next/image";
 import {
   OrderDetails,
   Shipment,
@@ -24,7 +25,7 @@ export const OrderDetailsModal: React.FC<Props> = ({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 overflow-auto bg-black bg-opacity-50 flex justify-center items-start p-4">
+    <div className="fixed inset-0 z-50  bg-black bg-opacity-50 flex justify-center items-start p-4">
       <div className="bg-white rounded-lg shadow-lg max-w-4xl w-full mt-16 mb-8 overflow-auto max-h-[90vh]">
         {/* Header */}
         <div className="flex justify-between items-center border-b border-b-secondary-900 bg-primary-600 px-6 py-4">
@@ -36,18 +37,12 @@ export const OrderDetailsModal: React.FC<Props> = ({
               Status: <span className="font-medium">{order.status}</span>
             </p>
           </div>
-          <button
-            onClick={onClose}
-            className="text-gray-500 hover:text-gray-700"
-          >
-            <FontAwesomeIcon
-              icon={faXmark}
-              className="mr-5 text-sm w-5 text-white bg-gray-700 hover:bg-hoverPrimary"
-              //  onClick={() => {
-              //    toggleModal({});
-              //  }}
-            />
-          </button>
+
+          <FontAwesomeIcon
+            icon={faXmark}
+            className=" text-sm w-5 p-0.5 rounded text-primary-600 bg-secondary-900 hover:bg-secondary-800"
+            onClick={() => onClose()}
+          />
         </div>
 
         {/* Body */}
@@ -55,14 +50,23 @@ export const OrderDetailsModal: React.FC<Props> = ({
           {/* Product List */}
           <section>
             <h3 className="text-lg font-bold mb-2">Products</h3>
-            <div className="divide-y ">
+            <div className="  divide-y  divide-secondary-900 ">
               {order.products.map((prod: Product) => (
                 <div key={prod.productId} className="flex items-center py-4">
-                  {prod.imageUrl && (
+                  {/* {prod.imageUrl && (
                     <img
                       src={prod.imageUrl}
                       alt={prod.name}
                       className="w-20 h-20 object-cover rounded-md mr-4"
+                    />
+                  )} */}
+                  {prod.imageUrl && (
+                    <Image
+                      src={prod.imageUrl}
+                      alt="Watch Image"
+                      width={80}
+                      height={140}
+                      className=" object-cover  rounded-md mr-4"
                     />
                   )}
                   <div className="flex-1">
@@ -298,7 +302,7 @@ interface AddressCardProps {
 
 const AddressCard: React.FC<AddressCardProps> = ({ address }) => {
   return (
-    <div className="space-y-1 text-sm text-secondary-800">
+    <div className=" text-sm text-secondary-800">
       <p className="font-medium">{address.name}</p>
       {address.company && <p>{address.company}</p>}
       <p>{address.line1}</p>

@@ -57,9 +57,9 @@ export default function FetchEventsTable() {
     products: [
       {
         productId: "WAT001",
-        name: "Rolex Submariner 40mm",
+        name: "3002 M QZ COL",
         variant: "Steel/Black Dial",
-        imageUrl: "/images/role_sub.jpg",
+        imageUrl: "/watches/3002 M QZ COL.png",
         quantity: 1,
         unitPrice: 120000,
         totalPrice: 120000,
@@ -69,9 +69,9 @@ export default function FetchEventsTable() {
       },
       {
         productId: "WAT002",
-        name: "Omega Speedmaster Moonwatch",
+        name: "3002 M QZ R",
         variant: "Steel / Hesalite",
-        imageUrl: "/images/omega_speed.jpg",
+        imageUrl: "/watches/3002MQZR.png",
         quantity: 1,
         unitPrice: 85000,
         totalPrice: 85000,
@@ -205,7 +205,7 @@ export default function FetchEventsTable() {
                 <td className="p-2  text-center">{event?.totalAmt}</td>
                 <td className="p-2  text-center">{event?.paymentStatus}</td>
                 <td className="p-2  text-center">{event?.orderStatus}</td>
-                <td className="p-2  text-center">
+                <td className="py-2 px-1  text-center">
                   {" "}
                   {/* <button
                     // className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"

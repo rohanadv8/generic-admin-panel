@@ -46,13 +46,13 @@ const CreateUserSection = ({
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex justify-between  w-full text-sm">
-          <p className=" text-base font-semibold text-secondary-900 ml-6">
+          <p className=" text-base font-semibold text-secondary-900 ml-5">
             {"Create User"}
           </p>
 
           <FontAwesomeIcon
             icon={faXmark}
-            className="mr-5 text-sm w-5 text-white bg-gray-700 hover:bg-hoverPrimary "
+            className="mr-5 text-sm w-5 p-0.5 rounded text-primary-600 bg-secondary-900 hover:bg-secondary-800"
             onClick={() => {
               toggleModal(false);
             }}
@@ -98,7 +98,7 @@ const CreateUserSection = ({
             />
           </div>
         </div>
-        <div className="flex justify-between items-center mx-6 pb-6">
+        <div className="flex justify-between items-center mx-5 pb-6">
           <h3 className="text-medium ">Provide permissions :</h3>
           {types.map((type) => (
             <RadioOption

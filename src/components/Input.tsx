@@ -48,7 +48,7 @@ export default function Input({
   return (
     <div className="relative block">
       {label && (
-        <label className="block pl-1 mb-1 text-secondary-900 text-sm">
+        <label className="block  mb-1 text-secondary-900 text-sm">
           {label}
           {isMandatory && <span className="pl-1 text-red-500">*</span>}
         </label>
@@ -61,7 +61,7 @@ export default function Input({
           </div>
         )} */}
         <input
-          className={`${inputClasses} input-no-arrows bg-primary-300 text-secondary-900 w-full py-2.5 px-2.5 h-9 border border-secondary-800 rounded text-sm placeholder:text-secondary-900  
+          className={`${inputClasses} input-no-arrows bg-primary-300 text-secondary-900 w-full py-2 px-2.5 h-9 border border-secondary-800 rounded text-sm placeholder:text-secondary-900  
        
           `}
           placeholder={placeholder}

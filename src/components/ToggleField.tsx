@@ -12,7 +12,7 @@ interface ToggleFieldDto {
 const ToggleField = ({ label, checked, onChange }: ToggleFieldDto) => (
   <div className="flex items-center space-x-3">
     {label && (
-      <label className="cursor-pointer pl-1 text-base  text-secondary-900">
+      <label className="cursor-pointer  text-base  text-secondary-900">
         {label}
       </label>
     )}
@@ -24,7 +24,7 @@ const ToggleField = ({ label, checked, onChange }: ToggleFieldDto) => (
         onChange={onChange}
       />
       <div
-        className="w-11 h-6 bg-secondary-900 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer 
+        className="w-11 h-6 bg-secondary-800 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer 
         peer-checked:after:translate-x-full 
         rtl:peer-checked:after:-translate-x-full 
         after:content-[''] after:absolute after:top-[2px] after:start-[2px] 

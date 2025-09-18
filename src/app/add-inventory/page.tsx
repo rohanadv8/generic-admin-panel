@@ -65,7 +65,7 @@ export default function AddInventory() {
   };
   return (
     <div className="bg-primary-600 text-secondary-900 p-6 ">
-      <h2 className="text-xl text-left font-semibold uppercase mb-4 ml-7">
+      <h2 className="text-xl text-left font-semibold uppercase mb-4 ">
         Add Inventory
       </h2>
       <div className="bg-primary-200 rounded-lg p-6 ">

@@ -71,13 +71,12 @@ const EditUserSection = ({
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex justify-between mb-5 w-full text-sm">
-          <p className=" text-base  text-secondary-900 ml-7 font-semibold">
+          <p className=" text-base  text-secondary-900 ml-6 font-semibold">
             {`Edit User : ${user.username} `}
           </p>
-
           <FontAwesomeIcon
             icon={faXmark}
-            className="mr-5 text-sm w-5 text-white bg-gray-700 hover:bg-hoverPrimary"
+            className="mr-6 text-sm w-5 p-0.5 rounded text-primary-600 bg-secondary-900 hover:bg-secondary-800"
             onClick={() => {
               toggleModal({});
             }}
@@ -116,7 +115,7 @@ const EditUserSection = ({
             checked={formData.status ?? false}
           />
           <div className="flex justify-between items-center  pb-6">
-            <h3 className="text-medium pl-1">Provide permissions :</h3>
+            <h3 className="text-medium ">Provide permissions :</h3>
             {editTypes.map((type) => (
               <RadioOption
                 key={type.name}

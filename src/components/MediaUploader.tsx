@@ -29,7 +29,7 @@ function MediaUploader({ isMandatory }: { isMandatory: boolean }) {
 
   return (
     <div className="mt-4">
-      <label className="block text-sm  text-secondary-900 pl-1 mb-1">
+      <label className="block text-sm  text-secondary-900  mb-1">
         Media {isMandatory && <span className="pl-1 text-red-500">*</span>}
       </label>
       <div className="border-2 border-dashed border-secondary-800 rounded-md p-6 min-h-[160px] flex flex-col items-center justify-center text-center w-full bg-primary-300">
