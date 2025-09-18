@@ -14,7 +14,7 @@ export default function Button({ color, text, icon, onClick }: ButtonPropsDto) {
 
   return (
     <button
-      className={`${colorClasses} flex items-center justify-center   shadow-lg  focus:outline-none focus:ring-1 h-10 rounded-lg py-2 px-2 `}
+      className={`${colorClasses} flex items-center justify-center   shadow-lg  focus:outline-none focus:ring-1 h-9 rounded-lg py-2 px-2 `}
       onClick={onClick}
     >
       {icon && <span className="mx-1">{icon}</span>}
