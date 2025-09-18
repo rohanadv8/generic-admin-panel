@@ -17,7 +17,7 @@ export interface InputProps {
   label?: string;
   inputPlace?: "passwordClass" | "basicClasses";
   placeholder?: string;
-  type: "text" | "number" | "password";
+  type: React.HTMLInputTypeAttribute;
   value?: string | number;
   name: string;
   error: string;

@@ -36,3 +36,14 @@
   --secondary-900: #f7f7fb;
   --secondary-800: #aaacb0;
 }
+/* Remove spin buttons in WebKit browsers (Chrome, Safari, Edge) */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Remove spinner in Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}

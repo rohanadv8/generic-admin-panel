@@ -1,6 +1,6 @@
 "use client";
 // MODULES //
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 // ICON //
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEyeSlash, faEye } from "@fortawesome/free-solid-svg-icons";
@@ -11,7 +11,7 @@ export default function Input({
   label,
   inputPlace,
   placeholder,
-  type,
+  type: propType,
   value,
   name,
   error,
@@ -23,6 +23,28 @@ export default function Input({
     passwordClass: "rounded-t-lg",
     basicClasses: "",
   }[inputPlace!];
+  const isReadOnly = name === "discountPrice";
+  useEffect(() => {
+    const handleWheel = (e: WheelEvent) => {
+      if (e.target instanceof HTMLInputElement && e.target.type === "number") {
+        e.preventDefault();
+      }
+    };
+
+    document.addEventListener("wheel", handleWheel, { passive: false });
+
+    return () => {
+      document.removeEventListener("wheel", handleWheel);
+    };
+  }, []);
+
+  // Type logic for password (if you use show/hide password)
+  const inputType = isReadOnly
+    ? propType // even if read-only, you may want to show “number” type
+    : propType === "password" && showPassword
+    ? "text"
+    : propType;
+
   return (
     <div className="relative block">
       {label && (
@@ -39,14 +61,15 @@ export default function Input({
           </div>
         )} */}
         <input
-          className={`${inputClasses} input-no-arrows bg-primary-300 text-secondary-900 w-full py-2.5 px-2.5 h-10 border border-secondary-800 rounded text-sm placeholder:text-secondary-900  
+          className={`${inputClasses} input-no-arrows bg-primary-300 text-secondary-900 w-full py-2.5 px-2.5 h-9 border border-secondary-800 rounded text-sm placeholder:text-secondary-900  
        
           `}
           placeholder={placeholder}
-          type={showPassword && type === "password" ? "text" : type}
+          type={inputType}
           value={value}
           name={name}
-          onChange={onChange}
+          onChange={!isReadOnly ? onChange : undefined}
+          readOnly={isReadOnly}
         />
 
         {/* Show/hide password */}

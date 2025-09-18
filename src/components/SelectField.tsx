@@ -23,7 +23,7 @@ const SelectField: React.FC<SelectFieldProps> = ({
         name={name}
         value={value}
         onChange={onChange}
-        className={`w-full text-sm  bg-primary-300 border border-secondary-800 h-10  rounded-md py-2.5 px-2.5 ${
+        className={`w-full text-sm  bg-primary-300 border border-secondary-800 h-9  rounded-md py-2.5 px-2.5 ${
           value === "" ? "text-secondary-900" : "text-secondary-900"
         }  `}
       >

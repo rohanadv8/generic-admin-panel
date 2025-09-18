@@ -29,12 +29,12 @@ function MediaUploader({ isMandatory }: { isMandatory: boolean }) {
 
   return (
     <div className="mt-4">
-      <label className="block text-sm font-medium text-secondary-900 pl-1 mb-1">
+      <label className="block text-sm  text-secondary-900 pl-1 mb-1">
         Media {isMandatory && <span className="pl-1 text-red-500">*</span>}
       </label>
       <div className="border-2 border-dashed border-secondary-800 rounded-md p-6 min-h-[160px] flex flex-col items-center justify-center text-center w-full bg-primary-300">
         {uploadedMedia.length > 0 ? (
-          <div className="mt-4 grid grid-cols-4 gap-4">
+          <div className=" grid grid-cols-4 gap-4">
             {uploadedMedia.map((file, index) => {
               const isImage = file.type.startsWith("image/");
               const isVideo = file.type.startsWith("video/");
@@ -52,7 +52,7 @@ function MediaUploader({ isMandatory }: { isMandatory: boolean }) {
                       alt={`uploaded-${index}`}
                       className="w-full h-20 object-cover rounded-md border border-secondary-800 bg-primary-4OO"
                     />
-                  )}
+                  )}{" "}
                   {isVideo && (
                     <video
                       src={URL.createObjectURL(file)}

@@ -77,7 +77,7 @@ export default function AddInventory() {
             placeholder=" "
             type="text"
             value={formData?.watchName}
-            name=""
+            name="watchName"
             onChange={(e) => SetInputValues(e.target.value, "watchName")}
             error=""
             isMandatory={true}
@@ -89,7 +89,7 @@ export default function AddInventory() {
             placeholder=" "
             type="text"
             value={formData?.modelNumber}
-            name=""
+            name="modelNumber"
             onChange={(e) => SetInputValues(e.target.value, "modelNumber")}
             error=""
             isMandatory={true}
@@ -109,7 +109,7 @@ export default function AddInventory() {
           <SelectField
             label="Select Gender"
             defaultOption="Select Gender"
-            name="marketlist"
+            name="gender"
             value={formData?.gender}
             options={genderList}
             onChange={(e) => SetInputValues(e.target.value, "gender")}
@@ -124,8 +124,8 @@ export default function AddInventory() {
             placeholder=" "
             type="number"
             value={formData?.actualPrice}
-            name=""
-            onChange={(e) => SetInputValues(e.target.value, "watchName")}
+            name="actualPrice"
+            onChange={(e) => SetInputValues(e.target.value, "actualPrice")}
             error=""
             isMandatory={true}
           />
@@ -135,8 +135,8 @@ export default function AddInventory() {
             placeholder=" "
             type="number"
             value={formData?.sellingPrice}
-            name=""
-            onChange={(e) => SetInputValues(e.target.value, "modelNumber")}
+            name="sellingPrice"
+            onChange={(e) => SetInputValues(e.target.value, "sellingPrice")}
             error=""
             isMandatory={true}
           />
@@ -145,9 +145,9 @@ export default function AddInventory() {
             inputPlace="basicClasses"
             placeholder=" "
             type="number"
-            value={formData?.discountPrice ?? ""}
-            name=""
-            onChange={(e) => SetInputValues(e.target.value, "modelNumber")}
+            value={formData?.discountPrice}
+            name="discountPrice"
+            onChange={(e) => SetInputValues(e.target.value, "discountPrice")}
             error=""
             isMandatory={true}
           />
@@ -177,11 +177,11 @@ export default function AddInventory() {
           /> */}
         </div>
         <div className="flex gap-4 ">
-          <div className="w-2/3">
+          <div className="w-1/2">
             <Description isMandatory={true} />
           </div>
 
-          <div className="w-1/3">
+          <div className="w-1/2">
             <MediaUploader isMandatory={true} />
           </div>
         </div>
@@ -203,8 +203,8 @@ export default function AddInventory() {
               checked={isSell}
             />
 
-            <div className="mt-4 text-lg ml-1 ">
-              Selected Type:
+            <div className="mt-4 text-base ml-1 ">
+              <span className="font-medium"> Selected Type:</span>
               <span className="font-semibold pl-1">
                 {isSell ? "Yes" : "No"}
               </span>
@@ -216,9 +216,10 @@ export default function AddInventory() {
               onChange={handleToggle}
               checked={isReturnable}
             />
-            <div className="mt-4 text-lg ml-1 ">
-              Selected Type:
-              <span className="font-semibold pl-1">
+            <div className="mt-4 text-base ml-1 ">
+              <span className="font-medium"> Selected Type:</span>
+
+              <span className=" pl-1">
                 {isReturnable ? "Returnable" : "Non-returnable"}
               </span>
             </div>
