@@ -203,11 +203,9 @@ export default function AddInventory() {
               checked={isSell}
             />
 
-            <div className="mt-4 text-base ml-1 ">
-              <span className="font-medium"> Selected Type:</span>
-              <span className="font-semibold pl-1">
-                {isSell ? "Yes" : "No"}
-              </span>
+            <div className="mt-4 text-sm ml-1 ">
+              <span className=""> Selected Type:</span>
+              <span className=" pl-1">{isSell ? "Yes" : "No"}</span>
             </div>
           </div>
           <div className="flex flex-col  justify-center items-start w-1/2 border-[1px] border-secondary-800 bg rounded-lg p-4 bg-primary-300">
@@ -216,8 +214,8 @@ export default function AddInventory() {
               onChange={handleToggle}
               checked={isReturnable}
             />
-            <div className="mt-4 text-base ml-1 ">
-              <span className="font-medium"> Selected Type:</span>
+            <div className="mt-4 text-sm ml-1 ">
+              <span className=""> Selected Type:</span>
 
               <span className=" pl-1">
                 {isReturnable ? "Returnable" : "Non-returnable"}
