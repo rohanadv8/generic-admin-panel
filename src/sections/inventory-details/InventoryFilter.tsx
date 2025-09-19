@@ -2,10 +2,26 @@
 import Button from "@/components/Button";
 import Input from "@/components/Input";
 import Link from "next/link";
+import { useState } from "react";
 
 interface FetchEventsFilterDtoNew {}
+interface InventoryDTO {
+  watchList: string;
+}
 
 export default function FetchEventsFilter({}: FetchEventsFilterDtoNew) {
+  const [formData, setFormData] = useState<InventoryDTO>({
+    watchList: "",
+  });
+  const handleInput = (value: number | string, key: string) => {
+    setFormData((prevState) => {
+      return {
+        ...prevState,
+        ...{ [key]: value },
+      };
+    });
+  };
+
   return (
     <div className="  bg-primary-200 p-4 rounded-lg shadow-xl">
       <h2 className="text-2xl  text-secondary-900 font-semibold flex items-center  ">
@@ -18,9 +34,9 @@ export default function FetchEventsFilter({}: FetchEventsFilterDtoNew) {
             inputPlace="basicClasses"
             placeholder=" Search WatchList"
             type="text"
-            value={""}
-            name=""
-            onChange={() => {}}
+            value={formData.watchList}
+            name="watchList"
+            onChange={(e) => handleInput(e.target.value, "watchList")}
             error=""
           />
         </div>

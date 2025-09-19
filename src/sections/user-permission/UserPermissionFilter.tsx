@@ -3,14 +3,29 @@ import Button from "@/components/Button";
 import Input from "@/components/Input";
 // import Input from "@/components/Input";
 import Link from "next/link";
+import { useState } from "react";
 
 interface UserPermissionFilterDTO {
   toggleModal: (state: boolean) => void;
+}
+interface UserDTO {
+  userName: string;
 }
 
 export default function UserPermissionFilter({
   toggleModal,
 }: UserPermissionFilterDTO) {
+  const [formData, setFormData] = useState<UserDTO>({
+    userName: "",
+  });
+  const handleInput = (value: number | string, key: string) => {
+    setFormData((prevState) => {
+      return {
+        ...prevState,
+        ...{ [key]: value },
+      };
+    });
+  };
   return (
     <div className="  bg-primary-200 p-4 rounded-lg shadow-xl">
       <h2 className="text-2xl  text-secondary-900 font-semibold flex items-center  ">
@@ -23,9 +38,9 @@ export default function UserPermissionFilter({
             inputPlace="basicClasses"
             placeholder=" Search User"
             type="text"
-            value={""}
-            name=""
-            onChange={() => {}}
+            value={formData.userName}
+            name="userName"
+            onChange={(e) => handleInput(e.target.value, "userName")}
             error=""
           />
         </div>

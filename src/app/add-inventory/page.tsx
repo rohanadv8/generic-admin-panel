@@ -69,7 +69,7 @@ export default function AddInventory() {
         Add Inventory
       </h2>
       <div className="bg-primary-200 rounded-lg p-6 ">
-        <h2 className="text-xl font-semibold mb-4 mx-1">Basic Information</h2>
+        <h2 className="text-xl font-semibold mb-4 ">Basic Information</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-1 md:gap-4  ">
           <Input
             label="Watch Name"
@@ -203,7 +203,7 @@ export default function AddInventory() {
               checked={isSell}
             />
 
-            <div className="mt-4 text-sm ml-1 ">
+            <div className="mt-4 text-sm  ">
               <span className=""> Selected Type:</span>
               <span className=" pl-1">{isSell ? "Yes" : "No"}</span>
             </div>
@@ -214,7 +214,7 @@ export default function AddInventory() {
               onChange={handleToggle}
               checked={isReturnable}
             />
-            <div className="mt-4 text-sm ml-1 ">
+            <div className="mt-4 text-sm  ">
               <span className=""> Selected Type:</span>
 
               <span className=" pl-1">
