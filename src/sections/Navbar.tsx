@@ -5,26 +5,36 @@ import React, { useEffect, useRef } from "react";
 import NavbarLink from "@/components/NavbarLink";
 // import DropDown from "@/components/DropDown";
 // ICONS //
-import { faList, faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCartShopping,
+  faRightFromBracket,
+  faUserPen,
+  faUsers,
+  faWarehouse,
+} from "@fortawesome/free-solid-svg-icons";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 const navbarItems: Array<{ text: string; navicon: IconProp; path: string }> = [
   {
     text: "Inventory List",
-    navicon: faList,
+    navicon: faWarehouse,
     path: "/inventory-list",
   },
   {
     text: "Customer List",
-    navicon: faList,
+    navicon: faUsers,
     path: "/customer-list",
   },
   {
     text: "User Permission",
-    navicon: faList,
+    navicon: faUserPen,
     path: "/user-permission",
   },
-  { text: "Order List ", navicon: faList, path: "/order-list" },
+  {
+    text: "Order List",
+    navicon: faCartShopping,
+    path: "/order-list",
+  },
 ];
 interface NavbarProps {
   isOpen: boolean;
