@@ -205,16 +205,9 @@ export default function FetchEventsTable() {
                 <td className="p-2  text-center">{event?.totalAmt}</td>
                 <td className="p-2  text-center">{event?.paymentStatus}</td>
                 <td className="p-2  text-center">{event?.orderStatus}</td>
-                <td className="py-2 px-1  text-center">
-                  {" "}
-                  {/* <button
-                    // className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
-                    onClick={() => setModalOpen(true)}
-                  >
-                    View Order {dummyOrder.id}
-                  </button> */}
+                <td className="py-2 px-1  flex justify-center">
                   <Button
-                    color="black"
+                    color="blackSmall"
                     onClick={() => setModalOpen(true)}
                     text={`View Order `}
                   />

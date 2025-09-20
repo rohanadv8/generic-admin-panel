@@ -44,18 +44,20 @@ export default function RootLayout({
     return (
       <html lang="en">
         <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased bg-primary-600`}
+          className={`${geistSans.variable} ${geistMono.variable}  bg-primary-600`}
         >
           <Header
             toggleSidebar={() => setIsSidebarOpen(true)}
             isSlideOpen={isSidebarOpen}
           />
+
           <Navbar
             isOpen={isSidebarOpen}
             onClose={() => setIsSidebarOpen(false)}
           />
+
           <div
-            className={` transition-all duration-[500ms]  ${
+            className={` transition-all duration-[500ms] mt-20  ${
               isSidebarOpen ? "ml-60" : "ml-0"
             }`}
           >

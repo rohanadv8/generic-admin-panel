@@ -8,6 +8,8 @@ export default function Button({ color, text, icon, onClick }: ButtonPropsDto) {
     red: "bg-customLoss focus:border-red-600 focus:ring-red-600",
     black:
       "bg-primary-600 text-secondary-900 hover:bg-secondary-900 hover:text-primary-600 text-sm  border-[0.5px] border-secondary-900 transition duration-500 ease-in-out ",
+    blackSmall:
+      "bg-primary-600 text-secondary-900 hover:bg-secondary-900 hover:text-primary-600 text-xs  border-[0.5px] border-secondary-900 transition duration-500 ease-in-out ",
     blackLogin:
       " w-full bg-primary-600 text-secondary-900 hover:bg-secondary-900 hover:text-primary-600 text-sm  border-[0.5px] border-secondary-900 transition duration-500 ease-in-out ",
   }[color];

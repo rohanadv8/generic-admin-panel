@@ -7,7 +7,7 @@ export interface NavbarLinkProps {
   navicon: IconProp;
 }
 export interface ButtonPropsDto {
-  color: "red" | "black" | "blackLogin";
+  color: "red" | "black" | "blackLogin" | "blackSmall";
 
   text: string;
   icon?: React.ReactNode;

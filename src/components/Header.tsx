@@ -9,7 +9,7 @@ interface HeaderProps {
 }
 export default function Header({ toggleSidebar, isSlideOpen }: HeaderProps) {
   return (
-    <div className=" bg-headerBackground p-4  flex justify-between">
+    <div className="fixed top-0 left-0 right-0 bg-headerBackground p-5 flex justify-between z-50">
       <div className="flex ">
         {isSlideOpen ? (
           <div className=" items-center   text-white py-2 mr-6 z-10 cursor-pointer">

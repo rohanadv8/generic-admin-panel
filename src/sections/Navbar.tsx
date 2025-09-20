@@ -66,12 +66,12 @@ export default function Navbar({ isOpen, onClose }: NavbarProps) {
   return (
     <div
       ref={navbarRef}
-      className={`h-full min-h-screen md:block absolute px-1  left-0 border-r-4 border-primary-200 bg-primary-600  transition-transform  transform duration-[500ms] ease-in-out ${
+      className={`fixed top-0 left-0 h-screen mt-20 px-1 border-r-4 border-primary-200 bg-primary-600 transition-transform transform duration-500 ease-in-out ${
         isOpen ? "translate-x-0" : "-translate-x-full"
       }`}
       style={{ width: "240px" }}
     >
-      <div className="m-2">
+      <div className="m-2 overflow-y-auto h-full">
         <ol className="my-3">
           {navbarItems.map((item, index) => (
             <li key={index} className="">
